@@ -31,20 +31,14 @@
         android:hint="Extra order"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/quantity"/>
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/extra"/>
+
     <EditText
         android:id="@+id/phonenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone number"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/address"/>
+        android:layout_below="@+id/extra"/>
     <EditText
         android:id="@+id/notes"
         android:layout_width="match_parent"
@@ -52,13 +46,22 @@
         android:hint="Notes"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/phonenumber"/>
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notes"
+        android:text="Pick location &#10095;&#10095;" />
+
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send order"
-        android:layout_below="@+id/notes"
-        android:background="@drawable/button_shape"/>
+        android:layout_below="@+id/location"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/button_shape"
+        android:text="Send order" />
 
     <TextView
         android:id="@+id/comments"

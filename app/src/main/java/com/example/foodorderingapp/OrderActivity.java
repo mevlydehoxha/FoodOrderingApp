@@ -20,7 +20,7 @@ public class OrderActivity extends AppCompatActivity {
 
 
     EditText ordername,quantity,extra,address,phonenumber,notes;
-    Button submit;
+    Button submit,location;
     TextView comments,textView;
     DBOrders DB;
     @Override
@@ -30,9 +30,10 @@ public class OrderActivity extends AppCompatActivity {
         ordername = (EditText) findViewById(R.id.ordername);
         quantity = (EditText) findViewById(R.id.quantity);
         extra = (EditText) findViewById(R.id.extra);
-        address = (EditText) findViewById(R.id.address);
+//        address = (EditText) findViewById(R.id.address);
         phonenumber = (EditText) findViewById(R.id.phonenumber);
         notes = (EditText) findViewById(R.id.notes);
+        location=(Button) findViewById(R.id.location);
         submit=(Button) findViewById(R.id.submit);
         comments=(TextView) findViewById(R.id.comments);
         DB= new DBOrders(this);
@@ -55,6 +56,13 @@ public class OrderActivity extends AppCompatActivity {
         comments.setText(sComment);
         comments.setMovementMethod(LinkMovementMethod.getInstance());
 
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2=new Intent(getApplicationContext(),PlacePicker.class);
+                startActivity(intent2);
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
