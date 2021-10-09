@@ -6,32 +6,38 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     tools:context=".CommentsActivity">
+
     <TextView
-        android:id = "@+id/text"
-        android:textSize = "30sp"
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent" />
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="-118dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <TextView
         android:id="@+id/empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/rating"
-        android:layout_width="match_parent"
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Rate us"
         android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@id/empty"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:numStars="5"
+        android:stepSize="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/empty"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="99dp" />
+
     <EditText
         android:id="@+id/comments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Give us a comment about our work"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/rating"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
