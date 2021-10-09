@@ -9,7 +9,6 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 public class OrderActivity extends AppCompatActivity {
 
 
-    EditText ordername,quantity,extra,address,phonenumber,notes;
+    EditText ordername,quantity,extra,phonenumber,notes;
     Button submit,location;
     TextView comments,textView;
     DBOrders DB;
@@ -30,7 +29,6 @@ public class OrderActivity extends AppCompatActivity {
         ordername = (EditText) findViewById(R.id.ordername);
         quantity = (EditText) findViewById(R.id.quantity);
         extra = (EditText) findViewById(R.id.extra);
-//        address = (EditText) findViewById(R.id.address);
         phonenumber = (EditText) findViewById(R.id.phonenumber);
         notes = (EditText) findViewById(R.id.notes);
         location=(Button) findViewById(R.id.location);
@@ -70,16 +68,15 @@ public class OrderActivity extends AppCompatActivity {
                 String name=ordername.getText().toString();
                 String qty=quantity.getText().toString();
                 String extr=extra.getText().toString();
-                String addr=address.getText().toString();
                 String phoneno=phonenumber.getText().toString();
                 String note=notes.getText().toString();
 
 
 
-                if(name.equals("") || qty.equals("")|| extr.equals("") || addr.equals("")|| phoneno.equals(""))
+                if(name.equals("") || qty.equals("")|| extr.equals("") || phoneno.equals(""))
                     Toast.makeText(OrderActivity.this,"Empty fields are required", Toast.LENGTH_SHORT).show();
                 else{
-                    Boolean insert =DB.insertOrder(name, qty, extr, addr, phoneno, note);
+                    Boolean insert =DB.insertOrder(name, qty, extr, phoneno, note);
                     if(insert==true){
                         Toast.makeText(OrderActivity.this,"Your order have been registered successfully.", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(getApplicationContext(), MenuActivity.class);

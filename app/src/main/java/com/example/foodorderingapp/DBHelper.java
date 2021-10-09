@@ -6,14 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DBNAME= "Food.db";
+    public static final String DBNAME= "Users.db";
 
     public DBHelper(Context context) {
-        super(context, "Food.db", null, 1);
+        super(context, "Users.db", null, 1);
     }
 
     @Override

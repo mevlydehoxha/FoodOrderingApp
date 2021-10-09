@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.SimpleCursorAdapter;
-
-import androidx.annotation.Nullable;
 
 public class DBOrders extends SQLiteOpenHelper {
 
@@ -28,13 +25,12 @@ public class DBOrders extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertOrder(String ordername, String quantity, String extra, String address, String phonenumber, String notes){
+    public Boolean insertOrder(String ordername, String quantity, String extra, String phonenumber, String notes){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put("ordername",ordername);
         contentValues.put("quantity",quantity);
         contentValues.put("extra",extra);
-        contentValues.put("address", address);
         contentValues.put("phonenumber", phonenumber);
         contentValues.put("notes",notes);
         long result=db.insert("orders",null,contentValues);
